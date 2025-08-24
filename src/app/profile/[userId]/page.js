@@ -164,7 +164,7 @@ export default function UserProfilePage() {
                            {feed.length > 0 ? (
                                 feed.map((item) => <ActivityCard key={`${item.type}-${item.id}`} item={item} />)
                             ) : (
-                                <p className="text-center text-gray-500 py-8">This user hasn't posted anything yet.</p>
+                                <p className="text-center text-gray-500 py-8">This user hasn&apos;t posted anything yet.</p>
                             )}
                         </CardContent>
                     </Card>
