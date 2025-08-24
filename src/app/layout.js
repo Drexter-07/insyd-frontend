@@ -27,16 +27,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Provide a single, persistent WebSocket connection */}
+        <Suspense fallback={<div>Loading navbar...</div>}>
         <SocketProvider>
           {/* Navbar appears on every page */}
-           <Suspense fallback={<div>Loading navbar...</div>}>
           <Navbar />
-          </Suspense>
           {/* Main content of each page */}
           <main className="min-h-screen bg-gray-50">
             {children}
           </main>
         </SocketProvider>
+        </Suspense>
       </body>
     </html>
   );
