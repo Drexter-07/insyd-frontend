@@ -22,7 +22,7 @@ export function SocketProvider({ children }) {
         if (userId) {
             // Connect to your backend's WebSocket server
             // Ensure the URL matches your backend's address (e.g., http://localhost:4000)
-            const newSocket = io('http://localhost:4000', {
+            const newSocket = io(process.env.NEXT_PUBLIC_API_BASE_URL, {
                 // We can pass the userId in the query for initial connection
                 query: { userId }
             });

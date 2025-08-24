@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Ensure your backend is running and this URL is correct
 export const apiClient = axios.create({
-  baseURL: "http://localhost:4000/api", // Your backend's base URL
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL, // Your backend's base URL
 });
 // --- User-related API calls ---
 
