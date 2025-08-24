@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { SocketProvider } from "@/context/SocketContext";
 import "./globals.css";
-
+import { Suspense } from 'react';
 // Load custom fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +29,9 @@ export default function RootLayout({ children }) {
         {/* Provide a single, persistent WebSocket connection */}
         <SocketProvider>
           {/* Navbar appears on every page */}
+           <Suspense fallback={<div>Loading navbar...</div>}>
           <Navbar />
-
+          </Suspense>
           {/* Main content of each page */}
           <main className="min-h-screen bg-gray-50">
             {children}
