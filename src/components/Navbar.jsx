@@ -66,6 +66,7 @@ export function Navbar() {
     }
   };
 
+  
   const userName = currentUser ? currentUser.name : 'User';
 
   return (
